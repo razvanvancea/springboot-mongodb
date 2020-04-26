@@ -5,8 +5,10 @@ import com.rv.springbootmongodb.service.PersonService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RestController
@@ -27,10 +29,10 @@ public class PersonController {
         return personService.getAllPersons();
     }
 
-    @PostMapping("/persons")
-    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(value = "/persons", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "adds a new person")
-    public void createPerson(@RequestBody Person p) {
+    public void createPerson(@RequestBody Person p, HttpServletResponse response) {
+        response.setStatus(HttpServletResponse.SC_CREATED);
         personService.createPerson(p);
     }
 
