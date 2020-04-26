@@ -2,7 +2,6 @@ package com.rv.springbootmongodb.service;
 
 import com.rv.springbootmongodb.model.Person;
 import com.rv.springbootmongodb.repository.PersonRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
