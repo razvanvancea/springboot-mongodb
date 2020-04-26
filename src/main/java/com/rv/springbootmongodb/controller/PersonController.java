@@ -1,9 +1,7 @@
 package com.rv.springbootmongodb.controller;
 
 import com.rv.springbootmongodb.model.Person;
-import com.rv.springbootmongodb.repository.PersonRepository;
 import com.rv.springbootmongodb.service.PersonService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
